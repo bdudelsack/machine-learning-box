@@ -90,10 +90,10 @@ MimeType=text/plain;
 StartupWMClass=atom
 EOL
 
-chown vagrant.vagrant /home/vagrant/Schreibtisch/*.desktop
-chmod a+x /home/vagrant/Schreibtisch/*.desktop
-
 pip3 install -I python-language-server[all] tensorflow jupyter jupyter-console keras
 
 cp /usr/share/applications/mate-terminal.desktop /home/vagrant/Schreibtisch/
 cp /var/lib/snapd/desktop/applications/firefox_firefox.desktop /home/vagrant/Schreibtisch/
+
+chown vagrant.vagrant /home/vagrant/Schreibtisch/*.desktop
+chmod a+x /home/vagrant/Schreibtisch/*.desktop
