@@ -6,13 +6,13 @@ Vagrant.configure("2") do |config|
   config.vagrant.plugins = "vagrant-reload"
 
   # Config
-  config.vm.box = "ubuntu/focal64"
+  config.vm.box = "ubuntu/groovy64"
   config.vm.hostname = "machine-learning-box"
 
-  config.vm.provider "virtualbox" do |v|
-    v.gui = true
-    v.memory = "2048"
-    v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+  config.vm.provider "virtualbox" do |vbox|
+    vbox.memory = "4096"
+    vbox.gui = true
+    vbox.customize ['modifyvm', :id, '--vram', '64']
   end
 
   # Port forwarding
@@ -26,13 +26,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "scripts/provision-vagrant-user.sh", privileged: false
 
   config.vm.provision :reload
-
-  # Welcome message
-  # config.vm.post_up_message = "*****************************************\n\n" \
-  #                             "    Welcome to your data science box!\n\n"  \
-  #                             "    To access your Jupyter Notebook\n" \
-  #                             "    point your browser to:\n\n" \
-  #                             "        http://localhost:8888\n\n" \
-  #                             "    Have fun!\n\n" \
-  #                             "*****************************************"
 end
