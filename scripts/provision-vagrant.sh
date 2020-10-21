@@ -15,7 +15,7 @@ apt-get install -y --no-install-recommends \
 	virtualbox-guest-additions-iso \
 	hunspell-de-de \
 	build-essential module-assistant gcc make perl dkms \
-	language-pack-de language-pack-gnome-de python3-pip
+	language-pack-de language-pack-gnome-de python3-pip libgconf-2-4
 
 update-locale LANG=de_DE.UTF-8 LANGUAGE= LC_MESSAGES= LC_COLLATE= LC_CTYPE=
 
@@ -64,9 +64,9 @@ systemctl daemon-reload
 systemctl restart jupyter.service
 
 wget "https://atom.io/download/deb?channel=beta" -O /tmp/atom.deb
-dpkg --ignore-depends=gvfs-bin -i /tmp/atom.deb
+dpkg --ignore-depends=gvfs-bin --ignore-depends=libgconf-2-4 -i /tmp/atom.deb
 
-snap install firefox --classic
+snap install firefox
 
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
