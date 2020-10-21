@@ -60,6 +60,8 @@ WantedBy=multi-user.target
 EOL
 
 systemctl enable jupyter.service
+systemctl daemon-reload
+systemctl restart jupyter.service
 
 wget "https://atom.io/download/deb?channel=beta" -O /tmp/atom.deb
 dpkg --ignore-depends=gvfs-bin -i /tmp/atom.deb
