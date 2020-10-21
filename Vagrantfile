@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     vbox.memory = "4096"
     vbox.gui = true
     vbox.customize ['modifyvm', :id, '--vram', '64']
+    vbox.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
   # Port forwarding
