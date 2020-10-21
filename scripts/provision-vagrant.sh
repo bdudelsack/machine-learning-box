@@ -15,7 +15,7 @@ apt-get install -y --no-install-recommends \
 	virtualbox-guest-additions-iso \
 	hunspell-de-de \
 	build-essential module-assistant gcc make perl dkms \
-	language-pack-de language-pack-gnome-de python3-pip libgconf-2-4
+	language-pack-de language-pack-gnome-de python3-pip
 
 update-locale LANG=de_DE.UTF-8 LANGUAGE= LC_MESSAGES= LC_COLLATE= LC_CTYPE=
 
