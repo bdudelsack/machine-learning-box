@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vagrant.plugins = "vagrant-reload"
 
   # Config
-  config.vm.box = "ubuntu/groovy64"
+  config.vm.box = "ubuntu/focal64"
   config.vm.hostname = "machine-learning-box"
 
   config.vm.provider "virtualbox" do |v|
